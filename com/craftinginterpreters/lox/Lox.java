@@ -64,6 +64,7 @@ public class Lox {
   private static void run(String source) {
     Scanner scanner = new Scanner(source);
     List<Token> tokens = scanner.scanTokens();
+
 /* Scanning run < Parsing Expressions print-ast
 
     // For now, just print the tokens.
@@ -73,6 +74,7 @@ public class Lox {
 */
 //> Parsing Expressions print-ast
     Parser parser = new Parser(tokens);
+    System.out.println(tokens);
 /* Parsing Expressions print-ast < Statements and State parse-statements
     Expr expression = parser.parse();
 */
