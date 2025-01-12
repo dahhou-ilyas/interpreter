@@ -130,15 +130,9 @@ class Scanner {
 //< char-error
     }
   }
-//< scan-token
-//> identifier
   private void identifier() {
     while (isAlphaNumeric(peek())) advance();
 
-/* Scanning identifier < Scanning keyword-type
-    addToken(IDENTIFIER);
-*/
-//> keyword-type
     String text = source.substring(start, current);
     TokenType type = keywords.get(text);
     if (type == null) type = IDENTIFIER;
@@ -174,7 +168,6 @@ class Scanner {
       return;
     }
 
-    // The closing ".
     advance();
 
     // Trim the surrounding quotes.
